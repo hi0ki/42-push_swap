@@ -1,31 +1,26 @@
-FILES = swap.c lst.c main.c
+SRCS = printf/ft_putchar.c printf/ft_putnbr.c printf/ft_putstr.c printf/ft_printf.c printf/ft_putung.c printf/ft_putx.c printf/ft_putp.c
+FILES = push_swap.c list.utils.c move.c move2.c ft_split.c ft_atoi.c 
 
-OBJS = $(FILES:.c=.o)
 
-RM = rm -f
-NAME =  push.a
-GCC = gcc -Wall -Wextra -Werror
+NAME =  push_swap
+CC = cc -Wall -Wextra -Werror
 
-.SILENT: 
+.SILENT:
+
 all: $(NAME)
 
-$(NAME) : $(OBJS) push_swap.h
-	ar rcs $(NAME) $(OBJS)
+$(NAME) : push_swap.h printf/ft_printf.h
+	$(CC) $(FILES) $(SRCS) -o $(NAME)
 
 %.o: %.c push_swap.h
-	$(GCC) -c $< -o $@
-
-gcc: $(NAME)
-	$(GCC) main.c $(NAME) -o push_swap && ./push_swap
+	$(CC) -c $< -o $@
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(OBJP)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re : fclean all
-
-run: gcc fclean
 
 .PHONY: re fclean clean all
