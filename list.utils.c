@@ -1,5 +1,4 @@
 #include "push_swap.h"
-#include "printf/ft_printf.h"
 
 t_list *ft_lstnew(int data)
 {
@@ -50,27 +49,4 @@ void ft_lstfree(t_list **head)
 		free(tmp);
 	}
 	*head = NULL;
-}
-
-t_list *ft_last(t_list *head)
-{
-	t_list *tmp = NULL;
-
-	tmp = head;
-	while (tmp->next)
-	{
-		tmp = tmp->next;
-	}
-	return (tmp);
-}
-t_list *ft_blast(t_list *head)
-{
-	t_list *tmp = NULL;
-
-	tmp = head;
-	while (tmp->next->next)
-	{
-		tmp = tmp->next;
-	}
-	return (tmp);
 }

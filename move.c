@@ -1,15 +1,20 @@
 #include "push_swap.h"
 
-void ft_push(t_list **head, t_list *node, char c)
+void ft_push(t_list **stack1, t_list **stack2, char c)
 {
-	if (!head || !node)
+	t_list *tmp;
+
+	if (!stack1 || !stack2 )
 		return ;
-	node->next = (*head);
-	*head = node;
+	tmp = *stack2;
+	*stack2 = (*stack2)->next;
+
+	tmp->next = *stack1;
+	*stack1 = tmp;
 	if (c == 'a')
-		ft_printf("sa\n");
+		ft_printf("pa\n");
 	if (c == 'b')
-		ft_printf("sb\n");
+		ft_printf("pb\n");
 }
 void  ft_swap(t_list **head, char c)
 {

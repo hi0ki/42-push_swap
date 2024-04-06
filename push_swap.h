@@ -8,16 +8,22 @@
 
 typedef struct s_list{
 	int  data;
+	int  index;
 	struct s_list *next;
 }t_list;
 
+void 	set_index(t_list **stack_a, t_list *list);
+t_list 	*sort(t_list *stack);
+int		find_max(t_list *stack);
+int		sorted(t_list *stack);
+void	ft_three(t_list **stack_a);
 void	ft_rotate(t_list **head, char c);
 void	ft_rr(t_list **stack_a, t_list **stack_b);
 void	ft_rrotate(t_list **head, char c);
 void 	ft_rrr(t_list **stack_a, t_list **stack_b);
 void	ft_swap(t_list **head, char c);
 void	ft_ss(t_list **stack_a, t_list **stack_b);
-void    ft_push(t_list **head, t_list *node, char c);
+void 	ft_push(t_list **head, t_list **stack_b, char c);
 void    ft_lstadd_back(t_list **head, t_list *node);
 int     ft_lstsize(t_list *head);
 t_list  *ft_lstnew(int data);

@@ -18,7 +18,7 @@ int main(int ac, char **av)
 		}
 		i++;
 	}
-	t_list *skip = stack_a;
+	t_list *skip = sort(stack_a);
 	while (skip)
 	{
 		ft_printf("%d\n", skip->data);
