@@ -25,5 +25,16 @@ t_list *ft_blast(t_list *head)
 
 void set_index(t_list **stack_a, t_list *list)
 {
-	>>>L>>
+	int i = 0;
+	t_list *skip;
+
+	skip = *stack_a;
+	while (skip)
+	{
+		if (skip->data == list->data)
+		{
+			skip->index = i;
+			skip = skip
+		}
+	}
 }
