@@ -34,7 +34,7 @@ void set_index(t_list **stack_a, t_list *list)
 		if (skip->data == list->data)
 		{
 			skip->index = i;
-			skip = skip
+			skip = skip;
 		}
 	}
 }
