@@ -1,5 +1,5 @@
 SRCS = printf/ft_putchar.c printf/ft_putnbr.c printf/ft_putstr.c printf/ft_printf.c printf/ft_putung.c printf/ft_putx.c printf/ft_putp.c
-FILES = push_swap.c list.utils.c move.c move2.c ft_split.c ft_atoi.c utils.c sort.c more.utils.c
+FILES = push_swap.c list.utils.c move.c move2.c ft_split.c ft_atoi.c utils.c more.utils.c
 
 
 NAME =  push_swap

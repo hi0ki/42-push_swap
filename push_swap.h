@@ -12,8 +12,9 @@ typedef struct s_list{
 	struct s_list *next;
 }t_list;
 
-void 	set_index(t_list **stack_a, t_list *list);
-t_list 	*sort(t_list *stack);
+void 	set_index(t_list **stack_a);
+int 	*sort_arr(t_list *stack);
+int *double_algo(int *arr, int len);
 int		find_max(t_list *stack);
 int		sorted(t_list *stack);
 void	ft_three(t_list **stack_a);

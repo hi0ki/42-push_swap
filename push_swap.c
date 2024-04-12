@@ -18,11 +18,6 @@ int main(int ac, char **av)
 		}
 		i++;
 	}
-	t_list *skip = sort(stack_a);
-	while (skip)
-	{
-		ft_printf("%d\n", skip->data);
-		skip = skip->next;
-	}
+	set_index(&stack_a);
 	return (0); 
 }

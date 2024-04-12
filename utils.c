@@ -84,27 +84,28 @@ void ft_three(t_list **stack_a)
 		ft_rrotate(stack_a, 'a');
 }
 
-t_list *sort(t_list *stack)
-{
-	int tmp;
-	t_list *skip;
-	t_list *save;
 
-	save = stack;
-	while (save)
+int *double_algo(int *arr, int len)
+{
+	int i;
+	int j;
+	int save;
+
+	i = 0;
+	while(i < len)
 	{
-		skip = save->next;
-		while (skip)
+		j = 0;
+		while (j < len - i - 1)
 		{
-			if (save->data > skip->data)
+			if(arr[j] > arr[j + 1])
 			{
-				tmp = save->data;
-				save->data = skip->data;
-				skip->data = tmp;
+				save = arr[j + 1];
+				arr[j + 1] = arr[j];
+				arr[j] = save;
 			}
-			skip = skip->next;
+			j++;
 		}
-		save = save->next;
+		i++;
 	}
-	return (stack);
+	return (arr);
 }
