@@ -42,15 +42,6 @@ int *sort_arr(t_list *stack)
 	return arr;
 }
 
-// void print(int *arr, int count)
-// {
-// 	int i = 0;
-// 	while (i < count)
-// 	{
-// 		printf("%d\n", arr[i]);
-// 		i++;
-// 	}
-// }
 void set_index(t_list **stack_a)
 {
 	int j;
