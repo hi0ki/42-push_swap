@@ -22,7 +22,7 @@ int find_max(t_list *stack)
 int find_min(t_list *stack)
 {
 	int i = 0;
-	int j = 0;
+	int j = -1;
 	int tmp;
 
 	tmp = stack->data;
@@ -57,31 +57,17 @@ int sorted(t_list *stack)
 
 void ft_three(t_list **stack_a)
 {
-	int i;
-	int j;
+	int i = 0;
+	int j = 0;
 
 	i = find_max(*stack_a);
 	j = find_min(*stack_a);
-	if (sorted(*stack_a) == 0)
-		return ;
-	if (i == 0 && j == 1)
+	if (i == 0)
 		ft_rotate(stack_a, 'a');
-	else if (i == 0 && j == 2)
-	{
-		ft_swap(stack_a, 'a');
+	else if (i == 1)
 		ft_rrotate(stack_a, 'a');
-	}
-	else if (i == 2 && j == 1)
+	if ((*stack_a)->data > (*stack_a)->next->data)
 		ft_swap(stack_a, 'a');
-	else if (i == 2 && j == 1)
-		ft_rotate(stack_a, 'a');
-	else if (i == 1 && j == 0)
-	{
-		ft_swap(stack_a, 'a');
-		ft_rotate(stack_a, 'a');
-	}
-	else if (i == 1 && j == 2)
-		ft_rrotate(stack_a, 'a');
 }
 
 

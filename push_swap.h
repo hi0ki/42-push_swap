@@ -15,7 +15,9 @@ typedef struct s_list{
 void 	set_index(t_list **stack_a);
 int 	*sort_arr(t_list *stack);
 int *double_algo(int *arr, int len);
+void sort_five(t_list **stack_a , t_list **stack_b);
 int		find_max(t_list *stack);
+int find_min(t_list *stack);
 int		sorted(t_list *stack);
 void	ft_three(t_list **stack_a);
 void	ft_rotate(t_list **head, char c);
@@ -26,6 +28,7 @@ void	ft_swap(t_list **head, char c);
 void	ft_ss(t_list **stack_a, t_list **stack_b);
 void 	ft_push(t_list **head, t_list **stack_b, char c);
 void    ft_lstadd_back(t_list **head, t_list *node);
+void    ft_lstadd_front(t_list **lst, t_list *new);
 int     ft_lstsize(t_list *head);
 t_list  *ft_lstnew(int data);
 int     ft_atoi(char *str);

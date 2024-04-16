@@ -4,7 +4,7 @@ void ft_push(t_list **stack1, t_list **stack2, char c)
 {
 	t_list *tmp;
 
-	if (!stack1 || !stack2 )
+	if (!stack2 )
 		return ;
 	tmp = *stack2;
 	*stack2 = (*stack2)->next;
