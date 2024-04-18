@@ -55,7 +55,7 @@ static int	c_word(char const *s, char c)
 	return (cnt);
 }
 
-static char	**ft_free(char **str, int i)
+char	**ft_free(char **str, int i)
 {
 	while (i > 0)
 	{

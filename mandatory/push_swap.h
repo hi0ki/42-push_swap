@@ -49,5 +49,6 @@ int		ft_atoi(char *str);
 int		ft_strlen(const char *str);
 char	**ft_split(char const *s, char c);
 void	ft_lstfree(t_list **head);
+char **ft_free(char **str, int i);
 
 #endif

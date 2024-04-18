@@ -59,12 +59,15 @@ int	ft_lstsize(t_list *head)
 void	ft_lstfree(t_list **head)
 {
 	t_list	*tmp;
+	t_list	*save;
 
-	while (*head)
+	save = *head;
+	while (*head && tmp)
 	{
-		tmp = (*head);
-		free(*head);
-		*head = (*head)->next;
+		tmp = save;
+		save->data = 0;
+		free(save);
+		save = save->next;
 	}
 	*head = NULL;
 }

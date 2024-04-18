@@ -14,30 +14,24 @@
 
 static t_list	*ft_last(t_list *head)
 {
-	t_list	*tmp;
-
 	if (!head)
 		return (NULL);
-	tmp = head;
-	while (tmp->next && tmp)
+	while (head->next)
 	{
-		tmp = tmp->next;
+		head = head->next;
 	}
-	return (tmp);
+	return (head);
 }
 
 static t_list	*ft_blast(t_list *head)
 {
-	t_list	*tmp;
-
 	if (!head)
 		return (NULL);
-	tmp = head;
-	while (tmp->next->next)
+	while (head->next->next)
 	{
-		tmp = tmp->next;
+		head = head->next;
 	}
-	return (tmp);
+	return (head);
 }
 
 void	ft_rr(t_list **stack_a, t_list **stack_b)
