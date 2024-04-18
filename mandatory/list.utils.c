@@ -62,9 +62,9 @@ void	ft_lstfree(t_list **head)
 
 	while (*head)
 	{
-		tmp = (*head);
-		*head = (*head)->next;
-		free(tmp);
+		tmp = (*head)->next;
+		free(*head);
+		*head = tmp;
 	}
 	*head = NULL;
 }

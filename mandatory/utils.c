@@ -12,6 +12,22 @@
 
 #include "push_swap.h"
 
+char	**ft_free(char **str)
+{
+	int size = ft_strlen(*str);
+
+	printf("size %d\n", size);
+	if (str == NULL)
+		return NULL;
+	// while (size > 0)
+	// {
+	// 	size--;
+	// 	free(str[size]);
+	// }
+	// free(str);
+	return (NULL);
+}
+
 int	find_max(t_list *stack)
 {
 	int	i;
