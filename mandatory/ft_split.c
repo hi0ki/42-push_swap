@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: eel-ansa <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/18 13:00:09 by eel-ansa          #+#    #+#             */
+/*   Updated: 2024/04/18 13:00:12 by eel-ansa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+static char	*ft_substr(char const *s, int start, int len)
 {
-	size_t	i;
+	int		i;
 	char	*str;
 
 	if (!s)
@@ -24,7 +36,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (str);
 }
 
-int	c_word(char const *s, char c)
+static int	c_word(char const *s, char c)
 {
 	int	i;
 	int	cnt;
@@ -43,7 +55,7 @@ int	c_word(char const *s, char c)
 	return (cnt);
 }
 
-char	**ft_free(char **str, int i)
+static char	**ft_free(char **str, int i)
 {
 	while (i > 0)
 	{
@@ -54,7 +66,7 @@ char	**ft_free(char **str, int i)
 	return (NULL);
 }
 
-char	**ft_alloc(char *s, char c, int c_word, char **str)
+static char	**ft_alloc(char *s, char c, int c_word, char **str)
 {
 	int	i;
 	int	start;
