@@ -88,6 +88,5 @@ bool	sorted(t_list *stack)
 			return (false);
 		}
 	}
-	ft_lstfree(&stack);
 	return (true);
 }

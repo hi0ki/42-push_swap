@@ -55,7 +55,6 @@ static int	*sort_arr(t_list *stack)
 		i++;
 	}
 	arr = double_algo(arr, len);
-	ft_lstfree(&stack);
 	return (arr);
 }
 
@@ -96,8 +95,6 @@ void	set_index(t_list **stack_a)
 		}
 		skip = skip->next;
 	}
-	free(skip);
-	free(arr);
 }
 
 void	sort_five(t_list **stack_a, t_list **stack_b)

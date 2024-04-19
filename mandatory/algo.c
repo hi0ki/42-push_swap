@@ -12,6 +12,14 @@
 
 #include "push_swap.h"
 
+void print_stack(t_list *s)
+{
+	while (s)
+	{
+		pritnf()
+	}
+}
+
 static void	big_one(t_list **stack_a, t_list **stack_b)
 {
 	int	index;
@@ -38,6 +46,9 @@ static void	big_one(t_list **stack_a, t_list **stack_b)
 
 static void	sort(t_list **stack_a, t_list **stack_b, int start, int end)
 {
+	int	size;
+
+	size = ft_lstsize(*stack_a);
 	while (*stack_a)
 	{
 		if ((*stack_a)->index >= start && (*stack_a)->index <= end)
@@ -76,8 +87,8 @@ static void	algo(t_list *stack_a)
 	else
 		sort(&stack_a, &stack_b, 0, 45);
 	big_one(&stack_a, &stack_b);
-
-	ft_lstfree(&stack_b);
+	// if (sorted(stack_a))
+	// 	printf("sorted\n");
 }
 
 int	main(int ac, char **av)
@@ -87,7 +98,6 @@ int	main(int ac, char **av)
 	char	**str;
 	t_list	*stack_a;
 
-	str = NULL;
 	stack_a = NULL;
 	i = 1;
 	if (ac > 1)
@@ -99,16 +109,12 @@ int	main(int ac, char **av)
 			while (str[j])
 			{
 				ft_lstadd_back(&stack_a, ft_lstnew(ft_atoi(str[j])));
-				free(str[j]);
 				j++;
 			}
-			free(str);
 			i++;
 		}
 	}
 	set_index(&stack_a);
 	algo(stack_a);
-	ft_lstfree(&stack_a);
-	system("leaks push_swap");
 	return (0); 
 }
