@@ -59,7 +59,7 @@ int	ft_atoi(char *str)
 		result = result * 10 + str[i] - 48;
 		i++;
 	}
-	if (result * sign > 2147483647 || result * sign <= -2147483648)
+	if (result * sign > 2147483647 || result * sign < -2147483648)
 	{
 		puterror("Error\n");
 		exit(EXIT_FAILURE);

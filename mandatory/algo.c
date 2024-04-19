@@ -21,7 +21,7 @@ void print_stack(t_list *s)
 	}
 }
 
-void	big_one(t_list **stack_a, t_list **stack_b)
+static void	big_one(t_list **stack_a, t_list **stack_b)
 {
 	int	index;
 	int	size ;
@@ -45,7 +45,7 @@ void	big_one(t_list **stack_a, t_list **stack_b)
 	}
 }
 
-void	sort(t_list **stack_a, t_list **stack_b, int start, int end)
+static void	sort(t_list **stack_a, t_list **stack_b, int start, int end)
 {
 	while (*stack_a)
 	{
@@ -67,17 +67,30 @@ void	sort(t_list **stack_a, t_list **stack_b, int start, int end)
 	}
 }
 
-void	algo(t_list **stack_a)
+static void	algo(t_list **stack_a,t_list **stack_b)
 {
-	t_list	*stack_b;
 	int		len;
 
-	stack_b = NULL;
 	len = ft_lstsize(*stack_a);
-	if (len > 0)
-		sort(stack_a, &stack_b, 0, 15);
-	big_one(stack_a, &stack_b);
-	ft_lstfree(&stack_b);
+	if (len == 3)
+		sort_three(stack_a);
+	if (len == 2)
+	{
+		if ((*stack_a)->data > (*stack_a)->next->data)
+			ft_swap(stack_a, 'a');
+		return ;
+	}
+	else if (len == 5 || len == 4)
+		sort_five(stack_a, stack_b);
+	else if (len <= 100)
+		sort(stack_a, stack_b, 0, 15);
+	else if (len > 100 && len <= 500)
+		sort(stack_a, stack_b, 0, 35);
+	else
+		sort(stack_a, stack_b, 0, 45);
+	big_one(stack_a, stack_b);
+	if (sorted(*stack_a) == true)
+		ft_printf("done\n");
 }
 
 int	main(int ac, char **av)
@@ -86,8 +99,10 @@ int	main(int ac, char **av)
 	int		j;
 	char	**str;
 	t_list	*stack_a;
+	t_list	*stack_b;
 
 	stack_a = NULL;
+	stack_b = NULL;
 	i = 1;
 	if (ac > 1)
 	{
@@ -107,7 +122,7 @@ int	main(int ac, char **av)
 		str = NULL;
 	}
 	set_index(&stack_a);
-	algo(&stack_a);
+	algo(&stack_a, &stack_b);
 	ft_lstfree(&stack_a);
 	return (0); 
 }

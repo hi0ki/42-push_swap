@@ -1,10 +1,11 @@
-SRCS = ../printf/ft_putchar.c ../printf/ft_putnbr.c ../printf/ft_putstr.c ../printf/ft_printf.c ../printf/ft_putung.c ../printf/ft_putx.c ../printf/ft_putp.c
 FILES = algo.c list.utils.c moves.c more_moves.c ft_split.c ft_atoi.c utils.c utils_1.c
 
+OBJS=$(FILES:.c=.o)
 
 NAME =  push_swap
 CC = cc -Wall -Wextra -Werror 
 RM = rm -f
+
 # Define some color codes
 RED=\033[0;31m
 GREEN=\033[0;32m
@@ -14,17 +15,20 @@ NC=\033[0m
 
 all: $(NAME)
 
-$(NAME) : push_swap.h ../printf/ft_printf.h
-	$(CC) $(FILES) $(SRCS) -o $(NAME)
+$(NAME) : push_swap.h $(OBJS)
+	make -C ../printf/
+	$(CC) $(OBJS) ../printf/libftprintf.a -o $(NAME)
 	echo "$(GREEN)push_swap compiled"
 
 %.o: %.c push_swap.h
 	$(CC) -c $< -o $@
 
 clean:
-	$(RM) $(OBJS) $(OBJP)
+	make clean -C ../printf/
+	$(RM) $(OBJS)
 
 fclean: clean
+	make fclean -C ../printf/
 	$(RM) $(NAME)
 
 re : fclean all

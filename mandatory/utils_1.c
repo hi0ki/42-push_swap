@@ -18,6 +18,7 @@ static int	*double_algo(int *arr, int len)
 	int	j;
 	int	save;
 
+
 	i = 0;
 	while (i < len)
 	{
@@ -121,7 +122,8 @@ void	sort_five(t_list **stack_a, t_list **stack_b)
 	else
 	{
 		sort_three(stack_a);
-		while (ft_lstsize(*stack_b))
-			ft_push(stack_a, stack_b, 'a');
+		ft_push(stack_a, stack_b, 'a');
+		if (ft_lstsize(*stack_b) == 1)
+			ft_push(stack_a, stack_b, 'a');	
 	}
 }
