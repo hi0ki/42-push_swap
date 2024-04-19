@@ -95,6 +95,8 @@ void	set_index(t_list **stack_a)
 		}
 		skip = skip->next;
 	}
+	free(arr);
+	arr = NULL;
 }
 
 void	sort_five(t_list **stack_a, t_list **stack_b)
