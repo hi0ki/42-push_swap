@@ -12,15 +12,6 @@
 
 #include "push_swap.h"
 
-void print_stack(t_list *s)
-{
-	while (s)
-	{
-		printf("%d\n",s->data);
-		s = s->next;
-	}
-}
-
 static void	big_one(t_list **stack_a, t_list **stack_b)
 {
 	int	index;
@@ -67,10 +58,11 @@ static void	sort(t_list **stack_a, t_list **stack_b, int start, int end)
 	}
 }
 
-static void	algo(t_list **stack_a,t_list **stack_b)
+static void	algo(t_list **stack_a, t_list **stack_b)
 {
 	int		len;
 
+	set_index(stack_a);
 	len = ft_lstsize(*stack_a);
 	if (len == 3)
 		sort_three(stack_a);
@@ -91,6 +83,7 @@ static void	algo(t_list **stack_a,t_list **stack_b)
 	big_one(stack_a, stack_b);
 	if (sorted(*stack_a) == true)
 		ft_printf("done\n");
+	ft_lstfree(stack_a);
 }
 
 int	main(int ac, char **av)
@@ -101,8 +94,6 @@ int	main(int ac, char **av)
 	t_list	*stack_a;
 	t_list	*stack_b;
 
-	stack_a = NULL;
-	stack_b = NULL;
 	i = 1;
 	if (ac > 1)
 	{
@@ -121,8 +112,5 @@ int	main(int ac, char **av)
 		}
 		str = NULL;
 	}
-	set_index(&stack_a);
 	algo(&stack_a, &stack_b);
-	ft_lstfree(&stack_a);
-	return (0); 
 }

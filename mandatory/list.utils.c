@@ -43,8 +43,8 @@ void	ft_lstadd_back(t_list **head, t_list *node)
 
 int	ft_lstsize(t_list *head)
 {
-	int	i;
-	t_list *tmp;
+	int		i;
+	t_list	*tmp;
 
 	tmp = head;
 	i = 0;
@@ -60,12 +60,12 @@ int	ft_lstsize(t_list *head)
 
 void	ft_lstfree(t_list **head)
 {
-    t_list *tmp;
+	t_list	*tmp;
 
-    while (*head)
+	while (*head)
 	{
-        tmp = (*head)->next;
-        free(*head);
-        *head = tmp;
-    }
+		tmp = (*head)->next;
+		free(*head);
+		*head = tmp;
+	}
 }
