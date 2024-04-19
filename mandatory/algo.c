@@ -47,9 +47,6 @@ void	big_one(t_list **stack_a, t_list **stack_b)
 
 void	sort(t_list **stack_a, t_list **stack_b, int start, int end)
 {
-	int	size;
-
-	size = ft_lstsize(*stack_a);
 	while (*stack_a)
 	{
 		if ((*stack_a)->index >= start && (*stack_a)->index <= end)
