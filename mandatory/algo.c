@@ -64,7 +64,9 @@ static void	algo(t_list **stack_a, t_list **stack_b)
 
 	set_index(stack_a);
 	len = ft_lstsize(*stack_a);
-	if (len == 3)
+	if (sorted(*stack_a) == true)
+		return ;
+	else if (len == 3)
 		sort_three(stack_a);
 	else if (len == 2)
 	{
@@ -81,7 +83,6 @@ static void	algo(t_list **stack_a, t_list **stack_b)
 	else
 		sort(stack_a, stack_b, 0, 45);
 	big_one(stack_a, stack_b);
-	// ft_lstfree(stack_a);
 }
 
 int	main(int ac, char **av)
@@ -93,23 +94,21 @@ int	main(int ac, char **av)
 	t_list	*stack_b;
 
 	i = 1;
-	if (ac > 1)
+	if (ac == 1)
+		return (0);
+	while (i < ac)
 	{
-		while (i < ac)
+		str = ft_split(av[i], ' ');
+		j = 0;
+		while (str[j])
 		{
-			str = ft_split(av[i], ' ');
-			j = 0;
-			while (str[j])
-			{
-				ft_lstadd_back(&stack_a, ft_lstnew(ft_atoi(str[j])));
-				j++;
-			}
-			ft_free(str, j);
-			i++;
+			ft_lstadd_back(&stack_a, ft_lstnew(ft_atoi(str[j])));
+			j++;
 		}
-		str = NULL;
+		ft_free(str, j);
+		i++;
 	}
 	check_num(&stack_a);
 	algo(&stack_a, &stack_b);
-	system("leaks push_swap");
+	ft_lstfree(&stack_a);
 }

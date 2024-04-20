@@ -60,7 +60,7 @@ char	**ft_free(char **str, int i)
 	if (i == -1)
 	{
 		i = 0;
-		while(str[i])
+		while (str[i])
 			i++;
 	}
 	while (i > 0)
@@ -103,13 +103,12 @@ char	**ft_split(char const *s, char c)
 	char	**str;
 	int		len_w;
 
-	if (!s)
-		return (NULL);
+	if (ft_strlen(s) == 0)
+		puterror("Error\n");
 	len_w = c_word(s, c);
 	str = (char **)malloc(sizeof(char *) * (len_w + 1));
 	if (!str)
 		return (NULL);
 	str = ft_alloc((char *)s, c, len_w, str);
-	check_char(str);
 	return (str);
 }

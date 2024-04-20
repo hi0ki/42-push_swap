@@ -3,7 +3,7 @@ FILES = algo.c list.utils.c moves.c more_moves.c ft_split.c ft_atoi.c utils.c ut
 OBJS=$(FILES:.c=.o)
 
 NAME =  push_swap
-CC = cc -Wall -Wextra -Werror 
+CC = cc -Wall -Wextra -Werror
 RM = rm -f
 
 # Define some color codes
@@ -34,5 +34,3 @@ fclean: clean
 re : fclean all
 
 .PHONY: re fclean clean all
-
-#  -fsanitize=address

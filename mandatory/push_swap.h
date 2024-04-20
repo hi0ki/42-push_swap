@@ -13,7 +13,6 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdbool.h>
@@ -48,7 +47,7 @@ t_list	*ft_lstnew(int data);
 void	ft_lstfree(t_list **head);
 /*                check errors            */
 void	check_num(t_list **stack);
-void    check_char(char **str);
+void	check_char(char *av);
 int		ft_atoi(char *str);
 int		ft_strlen(const char *str);
 char	**ft_split(char const *s, char c);

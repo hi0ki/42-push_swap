@@ -1,26 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_error.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: eel-ansa <eel-ansa@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/20 16:23:36 by eel-ansa          #+#    #+#             */
+/*   Updated: 2024/04/20 18:49:37 by eel-ansa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 #include <stdio.h>
 
-void    check_char(char **str)
+void	check_char(char *av)
 {
 	int	i;
-	int	j;
 
-	if (!str)
+	if (!av)
 		exit(EXIT_FAILURE);
 	i = 0;
-	while (str[i])
+	while (av[i])
 	{
-		j = 0;
-		while (str[i][j])
-		{
-			if (str[i][j] < '0' || str[i][j] > '9')
-			{
-				puterror("Error\n");
-				exit(EXIT_FAILURE);
-			}
-			j++;
-		}
+		if (av[i] < '0' || av[i] > '9')
+			puterror("Error\n");
 		i++;
 	}
 }
@@ -37,11 +40,7 @@ void	check_num(t_list **stack)
 		while (tmp)
 		{
 			if (tmp_stack->data == tmp->data)
-			{
 				puterror("Error\n");
-				while (1);
-				exit(EXIT_FAILURE);
-			}
 			tmp = tmp->next;
 		}
 		tmp_stack = tmp_stack->next;
