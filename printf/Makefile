@@ -7,6 +7,8 @@ RM = rm -f
 NAME = libftprintf.a
 OBJS = $(SRCS:.c=.o)
 
+.SILENT:
+
 all: $(NAME)
 
 $(NAME): $(OBJS) 
