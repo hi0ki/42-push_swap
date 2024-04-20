@@ -45,9 +45,14 @@ void	ft_lstadd_back(t_list **head, t_list *node);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *head);
 t_list	*ft_lstnew(int data);
+void	ft_lstfree(t_list **head);
+/*                check errors            */
+void	check_num(t_list **stack);
+void    check_char(char **str);
 int		ft_atoi(char *str);
 int		ft_strlen(const char *str);
 char	**ft_split(char const *s, char c);
-void	ft_lstfree(t_list **head);
+char	**ft_free(char **str, int i);
+void	puterror(char *str);
 
 #endif

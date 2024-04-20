@@ -1,4 +1,4 @@
-FILES = algo.c list.utils.c moves.c more_moves.c ft_split.c ft_atoi.c utils.c utils_1.c
+FILES = algo.c list.utils.c moves.c more_moves.c ft_split.c ft_atoi.c utils.c utils_1.c check_error.c
 
 OBJS=$(FILES:.c=.o)
 

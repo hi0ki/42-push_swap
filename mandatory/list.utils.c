@@ -26,7 +26,7 @@ void	ft_lstadd_back(t_list **head, t_list *node)
 {
 	t_list	*last;
 
-	if (!node || !head)
+	if (!node)
 		return ;
 	if (!*head)
 	{

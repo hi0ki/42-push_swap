@@ -55,8 +55,14 @@ static int	c_word(char const *s, char c)
 	return (cnt);
 }
 
-static char	**ft_free(char **str, int i)
+char	**ft_free(char **str, int i)
 {
+	if (i == -1)
+	{
+		i = 0;
+		while(str[i])
+			i++;
+	}
 	while (i > 0)
 	{
 		i--;
@@ -104,5 +110,6 @@ char	**ft_split(char const *s, char c)
 	if (!str)
 		return (NULL);
 	str = ft_alloc((char *)s, c, len_w, str);
+	check_char(str);
 	return (str);
 }
