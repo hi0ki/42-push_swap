@@ -106,6 +106,8 @@ char	**ft_split(char const *s, char c)
 	if (_strlen(s) == 0)
 		puterror("Error\n");
 	len_w = c_word(s, c);
+	if (len_w == 0)
+		puterror("Error\n");
 	str = (char **)malloc(sizeof(char *) * (len_w + 1));
 	if (!str)
 		return (NULL);

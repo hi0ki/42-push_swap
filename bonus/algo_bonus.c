@@ -67,6 +67,7 @@ void	checker(t_list **stack_a, t_list **stack_b)
 	while (str)
 	{
 		more_check(str, stack_a, stack_b);
+		free(str);
 		str = get_next_line(0);
 	}
 	if (sorted(*stack_a) == true && ft_lstsize(*stack_b) == 0)
