@@ -2,7 +2,7 @@ FILES = algo.c list.utils.c moves.c more_moves.c ft_split.c ft_atoi.c utils.c ut
 
 OBJS=$(FILES:.c=.o)
 
-NAME =  push_swap
+NAME =  ../push_swap
 CC = cc -Wall -Wextra -Werror 
 CC = cc -Wall -Wextra -Werror
 RM = rm -f
@@ -14,7 +14,7 @@ all: $(NAME)
 
 $(NAME): push_swap.h $(OBJS) $(FILES)
 	@make -C ../printf/
-	$(CC) $(OBJS) ../printf/libftprintf.a -o $(NAME)
+	@$(CC) $(OBJS) ../printf/libftprintf.a -o $(NAME)
 	@echo "$(GREEN)push_swap compiled$(NC)"
 
 %.o: %.c push_swap.h 

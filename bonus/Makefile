@@ -2,7 +2,7 @@ FILES = algo_bonus.c list.utils_bonus.c moves_bonus.c more_moves_bonus.c ft_spli
 
 OBJS=$(FILES:.c=.o)
 
-NAME =  checker
+NAME =  ../checker
 CC = cc -Wall -Wextra -Werror 
 CC = cc -Wall -Wextra -Werror
 RM = rm -f
@@ -14,8 +14,8 @@ all: $(NAME)
 
 $(NAME): push_swap_bonus.h $(OBJS) $(FILES)
 	@make -C ../printf/
-	$(CC) $(OBJS) ../printf/libftprintf.a -o $(NAME)
-	@echo "$(GREEN)push_swap compiled$(NC)"
+	@$(CC) $(OBJS) ../printf/libftprintf.a -o $(NAME)
+	@echo "$(GREEN)checker compiled$(NC)"
 
 %.o: %.c push_swap_bonus.h 
 	@$(CC) -c $< -o $@

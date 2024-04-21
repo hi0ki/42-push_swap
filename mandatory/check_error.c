@@ -6,12 +6,11 @@
 /*   By: eel-ansa <eel-ansa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 16:23:36 by eel-ansa          #+#    #+#             */
-/*   Updated: 2024/04/20 18:49:37 by eel-ansa         ###   ########.fr       */
+/*   Updated: 2024/04/21 20:37:13 by eel-ansa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 void	check_char(char *av)
 {
