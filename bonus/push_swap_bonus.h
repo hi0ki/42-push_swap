@@ -26,18 +26,13 @@ typedef struct s_list{
 }	t_list;
 
 /*              sort                */
-void	set_index(t_list **stack_a);
-void	sort_five(t_list **stack_a, t_list **stack_b);
-void	sort_three(t_list **stack_a);
 bool	sorted(t_list *stack);
-int		find_max(t_list *stack);
-int		find_min(t_list *stack);
-/*              moves                  */
-void	ft_rotate(t_list **head, char c);
+/*               moves                  */
+void	ft_rotate(t_list **head);
 void	ft_rr(t_list **stack_a, t_list **stack_b);
 void	ft_rrotate(t_list **head);
 void	ft_rrr(t_list **stack_a, t_list **stack_b);
-void	ft_swap(t_list **head, char c);
+void	ft_swap(t_list **head);
 void	ft_ss(t_list **stack_a, t_list **stack_b);
 void	ft_push(t_list **head, t_list **stack_b);
 /*                linked list                     */

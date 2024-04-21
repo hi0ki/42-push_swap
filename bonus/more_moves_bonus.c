@@ -36,11 +36,10 @@ static t_list	*ft_blast(t_list *head)
 
 void	ft_rr(t_list **stack_a, t_list **stack_b)
 {
-	if (ft_lstsize(*stack_a) <= 1 || ft_lstsize(*stack_b) <= 1)
+	if (ft_lstsize(*stack_a) <= 1 && ft_lstsize(*stack_b) <= 1)
 		return ;
-	ft_rotate(stack_a, ' ');
-	ft_rotate(stack_b, ' ');
-	ft_printf("rr\n");
+	ft_rotate(stack_a);
+	ft_rotate(stack_b);
 }
 
 void	ft_rrotate(t_list **head)
@@ -61,9 +60,8 @@ void	ft_rrotate(t_list **head)
 
 void	ft_rrr(t_list **stack_a, t_list **stack_b)
 {
-	if (ft_lstsize(*stack_a) <= 1 || ft_lstsize(*stack_b) <= 1)
+	if (ft_lstsize(*stack_a) <= 1 && ft_lstsize(*stack_b) <= 1)
 		return ;
 	ft_rrotate(stack_a);
 	ft_rrotate(stack_b);
-	ft_printf("rrr\n");
 }

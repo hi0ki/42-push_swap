@@ -23,6 +23,7 @@ static t_list	*ft_last(t_list *head)
 	return (head);
 }
 
+
 static t_list	*ft_blast(t_list *head)
 {
 	if (!head)

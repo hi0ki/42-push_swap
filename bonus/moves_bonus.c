@@ -16,7 +16,7 @@ void	ft_push(t_list **stack1, t_list **stack2)
 {
 	t_list	*tmp;
 
-	if (!*stack2 )
+	if (!*stack2)
 		return ;
 	tmp = *stack2;
 	*stack2 = (*stack2)->next;
@@ -24,7 +24,7 @@ void	ft_push(t_list **stack1, t_list **stack2)
 	*stack1 = tmp;
 }
 
-void	ft_swap(t_list **head, char c)
+void	ft_swap(t_list **head)
 {
 	t_list	*tmp;
 
@@ -34,22 +34,17 @@ void	ft_swap(t_list **head, char c)
 	(*head) = (*head)->next;
 	tmp->next = (*head)->next;
 	(*head)->next = tmp;
-	if (c == 'a')
-		ft_printf("sa\n");
-	else if (c == 'b')
-		ft_printf("sb\n");
 }
 
 void	ft_ss(t_list **stack_a, t_list **stack_b)
 {
 	if (ft_lstsize(*stack_a) <= 1 || ft_lstsize(*stack_b) <= 1)
 		return ;
-	ft_swap(stack_a, ' ');
-	ft_swap(stack_b, ' ');
-	ft_printf("ss\n");
+	ft_swap(stack_a);
+	ft_swap(stack_b);
 }
 
-void	ft_rotate(t_list **head, char c)
+void	ft_rotate(t_list **head)
 {
 	t_list	*lst;
 
@@ -59,10 +54,6 @@ void	ft_rotate(t_list **head, char c)
 	*head = (*head)->next;
 	lst->next = NULL;
 	ft_lstadd_back(head, lst);
-	if (c == 'a')
-		ft_printf("ra\n");
-	else if (c == 'b')
-		ft_printf("rb\n");
 }
 
 bool	sorted(t_list *stack)

@@ -33,9 +33,9 @@ bool	cmp(char *str, char *src)
 void	more_check(char *str, t_list **stack_a, t_list **stack_b)
 {
 	if (cmp(str, "sa") == true)
-		ft_swap(stack_a, str[1]);
+		ft_swap(stack_a);
 	else if (cmp(str, "sb") == true)
-		ft_swap(stack_b, str[1]);
+		ft_swap(stack_b);
 	else if (cmp(str, "ss") == true)
 		ft_ss(stack_a, stack_b);
 	else if (cmp(str, "pa") == true)
@@ -43,9 +43,9 @@ void	more_check(char *str, t_list **stack_a, t_list **stack_b)
 	else if (cmp(str, "pb") == true)
 		ft_push(stack_b, stack_a);
 	else if (cmp(str, "ra") == true)
-		ft_rotate(stack_a, str[1]);
+		ft_rotate(stack_a);
 	else if (cmp(str, "rb") == true)
-		ft_rotate(stack_b, str[1]);
+		ft_rotate(stack_b);
 	else if (cmp(str, "rr") == true)
 		ft_rr(stack_a, stack_b);
 	else if (cmp(str, "rra") == true)

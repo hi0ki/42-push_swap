@@ -3,55 +3,31 @@ FILES = algo_bonus.c list.utils_bonus.c moves_bonus.c more_moves_bonus.c ft_spli
 OBJS=$(FILES:.c=.o)
 
 NAME =  checker
-CC = cc -Wall -Wextra -Werror -fsanitize=address
+CC = cc -Wall -Wextra -Werror 
+CC = cc -Wall -Wextra -Werror
 RM = rm -f
 
-# Define some color codes
-RED=\033[0;31m
-GREY=\033[1;30m
 GREEN=\033[0;32m
 NC=\033[0m
 
+all: $(NAME)
 
-
-
-all:
-	@if [ -n "$(wildcard *.o)" ] && [ -f "$(NAME)" ]; then \
-        echo "$(RED)everything is already done$(NC)";\
-    else \
-		$(MAKE) $(NAME);\
-    fi
-
-
-$(NAME) : push_swap_bonus.h $(OBJS)
-	@echo "$(GREY)Compiling push_swap...$(NC)"
-	@sleep 0.5
+$(NAME): push_swap_bonus.h $(OBJS) $(FILES)
 	@make -C ../printf/
-	@$(CC) $(OBJS) ../printf/libftprintf.a -o $(NAME)
-	@echo "$(GREEN)Push_swap compiled ✔︎$(NC)"
+	$(CC) $(OBJS) ../printf/libftprintf.a -o $(NAME)
+	@echo "$(GREEN)push_swap compiled$(NC)"
 
-%.o: %.c push_swap_bonus.h
+%.o: %.c push_swap_bonus.h 
 	@$(CC) -c $< -o $@
 
 clean:
-	@if [ -n "$(wildcard $(OBJS))" ]; then \
-        echo "$(GREY)Cleaning object files...$(NC)"; \
-        make clean -C ../printf/; \
-        sleep 0.5; \
-        $(RM) $(OBJS); \
-        echo "$(GREEN)Object files cleaned ✔︎$(NC)"; \
-    else \
-        echo "$(GREEN)No object files to clean$(NC)"; \
-    fi
+	@make clean -C ../printf/
+	@$(RM) $(OBJS)
 
 fclean: clean
-	@if [ -f "$(NAME)" ]; then \
-        make fclean -C ../printf/;\
-        $(RM) $(NAME); \
-    else \
-        echo "$(GREEN)No $(NAME) file to clean$(NC)"; \
-    fi
+	@make fclean -C ../printf/
+	@$(RM) $(NAME)
 
-re : fclean  all
+re : fclean all
 
 .PHONY: re fclean clean all

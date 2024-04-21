@@ -50,12 +50,10 @@ int	ft_atoi(char *str)
 	sign = 1;
 	while (str[i] == ' ' || str[i] == '\t')
 		i++;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			sign = -1;
+	if (str[i] == '-')
+		sign = -1;
+	if (str[i] == '+' || str[i] == '-')
 		i++;
-	}
 	if (!str[i])
 		puterror("Error\n");
 	check_char(str + i);

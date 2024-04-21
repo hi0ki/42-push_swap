@@ -112,3 +112,5 @@ char	**ft_split(char const *s, char c)
 	str = ft_alloc((char *)s, c, len_w, str);
 	return (str);
 }
+
+
