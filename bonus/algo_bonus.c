@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 bool	cmp(char *str, char *src)
 {
@@ -39,9 +39,9 @@ void	more_check(char *str, t_list **stack_a, t_list **stack_b)
 	else if (cmp(str, "ss") == true)
 		ft_ss(stack_a, stack_b);
 	else if (cmp(str, "pa") == true)
-		ft_push(stack_a, stack_b, str[1]);
+		ft_push(stack_a, stack_b);
 	else if (cmp(str, "pb") == true)
-		ft_push(stack_b, stack_a, str[1]);
+		ft_push(stack_b, stack_a);
 	else if (cmp(str, "ra") == true)
 		ft_rotate(stack_a, str[1]);
 	else if (cmp(str, "rb") == true)
@@ -49,13 +49,13 @@ void	more_check(char *str, t_list **stack_a, t_list **stack_b)
 	else if (cmp(str, "rr") == true)
 		ft_rr(stack_a, stack_b);
 	else if (cmp(str, "rra") == true)
-		ft_rrotate(stack_a, str[2]);
+		ft_rrotate(stack_a);
 	else if (cmp(str, "rrb") == true)
-		ft_rrotate(stack_b, str[2]);
+		ft_rrotate(stack_b);
 	else if (cmp(str, "rrr") == true)
 		ft_rrr(stack_a, stack_b);
 	else
-		printf("Error\n");
+		puterror("Error\n");
 }
 
 void	checker(t_list **stack_a, t_list **stack_b)
@@ -72,7 +72,7 @@ void	checker(t_list **stack_a, t_list **stack_b)
 	if (sorted(*stack_a) == true && ft_lstsize(*stack_b) == 0)
 		ft_printf("OK\n");
 	else
-		puterror("Error\n");
+		puterror("KO\n");
 }
 
 int	main(int ac, char **av)

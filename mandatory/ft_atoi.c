@@ -50,11 +50,14 @@ int	ft_atoi(char *str)
 	sign = 1;
 	while (str[i] == ' ' || str[i] == '\t')
 		i++;
-	if (str[i] == '-')
+	if (str[i] == '-' || str[i] == '+')
 	{
-		sign = -1;
+		if (str[i] == '-')
+			sign = -1;
 		i++;
 	}
+	if (!str[i])
+		puterror("Error\n");
 	check_char(str + i);
 	while (str[i] >= '0' && str[i] <= '9')
 	{

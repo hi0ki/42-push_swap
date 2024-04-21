@@ -10,22 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
-void	ft_push(t_list **stack1, t_list **stack2, char c)
+void	ft_push(t_list **stack1, t_list **stack2)
 {
 	t_list	*tmp;
 
-	if (!*stack2)
+	if (!*stack2 )
 		return ;
 	tmp = *stack2;
 	*stack2 = (*stack2)->next;
 	tmp->next = *stack1;
 	*stack1 = tmp;
-	if (c == 'a')
-		ft_printf("pa\n");
-	if (c == 'b')
-		ft_printf("pb\n");
 }
 
 void	ft_swap(t_list **head, char c)

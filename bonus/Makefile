@@ -1,4 +1,4 @@
-FILES = algo.c list.utils.c moves.c more_moves.c ft_split.c ft_atoi.c check_error.c gnl/get_next_line.c gnl/get_next_line_utils.c
+FILES = algo_bonus.c list.utils_bonus.c moves_bonus.c more_moves_bonus.c ft_split_bonus.c ft_atoi_bonus.c check_error_bonus.c gnl/get_next_line.c gnl/get_next_line_utils.c
 
 OBJS=$(FILES:.c=.o)
 
@@ -12,6 +12,9 @@ GREY=\033[1;30m
 GREEN=\033[0;32m
 NC=\033[0m
 
+
+
+
 all:
 	@if [ -n "$(wildcard *.o)" ] && [ -f "$(NAME)" ]; then \
         echo "$(RED)everything is already done$(NC)";\
@@ -20,14 +23,14 @@ all:
     fi
 
 
-$(NAME) : push_swap.h $(OBJS)
+$(NAME) : push_swap_bonus.h $(OBJS)
 	@echo "$(GREY)Compiling push_swap...$(NC)"
 	@sleep 0.5
 	@make -C ../printf/
 	@$(CC) $(OBJS) ../printf/libftprintf.a -o $(NAME)
 	@echo "$(GREEN)Push_swap compiled ✔︎$(NC)"
 
-%.o: %.c push_swap.h
+%.o: %.c push_swap_bonus.h
 	@$(CC) -c $< -o $@
 
 clean:

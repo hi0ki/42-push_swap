@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef PUSH_SWAP_BONUS_H
+# define PUSH_SWAP_BONUS_H
 
 # include <unistd.h>
 # include <stdlib.h>
@@ -35,11 +35,11 @@ int		find_min(t_list *stack);
 /*              moves                  */
 void	ft_rotate(t_list **head, char c);
 void	ft_rr(t_list **stack_a, t_list **stack_b);
-void	ft_rrotate(t_list **head, char c);
+void	ft_rrotate(t_list **head);
 void	ft_rrr(t_list **stack_a, t_list **stack_b);
 void	ft_swap(t_list **head, char c);
 void	ft_ss(t_list **stack_a, t_list **stack_b);
-void	ft_push(t_list **head, t_list **stack_b, char c);
+void	ft_push(t_list **head, t_list **stack_b);
 /*                linked list                     */
 void	ft_lstadd_back(t_list **head, t_list *node);
 void	ft_lstadd_front(t_list **lst, t_list *new);
