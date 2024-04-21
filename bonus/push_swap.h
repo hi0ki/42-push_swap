@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <stdbool.h>
 # include "../printf/ft_printf.h"
+# include "gnl/get_next_line.h"
 /*        struct           */
 typedef struct s_list{
 	int				data;
@@ -51,7 +52,7 @@ void	check_char(char *av);
 void	puterror(char *str);
 /*               utils              */
 int		ft_atoi(char *str);
-int		ft_strlen(const char *str);
+int		_strlen(const char *str);
 char	**ft_split(char const *s, char c);
 char	**ft_free(char **str, int i);
 
