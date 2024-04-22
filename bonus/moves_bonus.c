@@ -38,8 +38,6 @@ void	ft_swap(t_list **head)
 
 void	ft_ss(t_list **stack_a, t_list **stack_b)
 {
-	if (ft_lstsize(*stack_a) <= 1 || ft_lstsize(*stack_b) <= 1)
-		return ;
 	ft_swap(stack_a);
 	ft_swap(stack_b);
 }

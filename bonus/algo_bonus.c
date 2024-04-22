@@ -89,6 +89,7 @@ int	main(int ac, char **av)
 	t_list	*stack_b;
 
 	i = 1;
+	stack_a = NULL;
 	if (ac == 1)
 		return (0);
 	while (i < ac)

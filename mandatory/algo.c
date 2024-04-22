@@ -104,13 +104,12 @@ int	main(int ac, char **av)
 		while (str[j])
 		{
 			ft_lstadd_back(&stack_a, ft_lstnew(ft_atoi(str[j])));
-			free(str[j]);
 			j++;
 		}
-		free(str);
+		ft_free(str, j);
 		i++;
 	}
 	check_num(&stack_a);
 	algo(&stack_a, &stack_b);
-	// ft_lstfree(&stack_a);
+	ft_lstfree(&stack_a);
 }
