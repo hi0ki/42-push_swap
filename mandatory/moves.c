@@ -55,7 +55,7 @@ void	ft_rotate(t_list **head, char c)
 {
 	t_list	*lst;
 
-	if (!head || ft_lstsize(*head) < 2)
+	if (!head || !*head)
 		return ;
 	lst = *head;
 	*head = (*head)->next;

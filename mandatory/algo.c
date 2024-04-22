@@ -62,6 +62,7 @@ static void	algo(t_list **stack_a, t_list **stack_b)
 {
 	int		len;
 
+	*stack_b = NULL;
 	set_index(stack_a);
 	len = ft_lstsize(*stack_a);
 	if (sorted(*stack_a) == true)
@@ -90,7 +91,7 @@ int	main(int ac, char **av)
 	int		i;
 	int		j;
 	char	**str;
-	t_list	*stack_a;
+	t_list	*stack_a = NULL;
 	t_list	*stack_b;
 
 	i = 1;
@@ -103,13 +104,13 @@ int	main(int ac, char **av)
 		while (str[j])
 		{
 			ft_lstadd_back(&stack_a, ft_lstnew(ft_atoi(str[j])));
+			free(str[j]);
 			j++;
-			free(str[i]);
 		}
 		free(str);
 		i++;
 	}
 	check_num(&stack_a);
 	algo(&stack_a, &stack_b);
-	ft_lstfree(&stack_a);
+	// ft_lstfree(&stack_a);
 }

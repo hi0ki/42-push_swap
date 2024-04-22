@@ -26,7 +26,7 @@ void	ft_lstadd_back(t_list **head, t_list *node)
 {
 	t_list	*last;
 
-	if (!node)
+	if (!node || !head)
 		return ;
 	if (!*head)
 	{
@@ -48,8 +48,8 @@ int	ft_lstsize(t_list *head)
 
 	tmp = head;
 	i = 0;
-	if (!head)
-		return (-1);
+	// if (!head)
+	// 	return (-1);
 	while (tmp)
 	{
 		tmp = tmp->next;
