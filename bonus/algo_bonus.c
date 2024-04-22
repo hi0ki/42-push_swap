@@ -73,7 +73,11 @@ void	checker(t_list **stack_a, t_list **stack_b)
 	if (sorted(*stack_a) == true && ft_lstsize(*stack_b) == 0)
 		ft_printf("OK\n");
 	else
+	{
+		ft_lstfree(stack_a);
+		ft_lstfree(stack_b);
 		puterror("KO\n");
+	}
 }
 
 int	main(int ac, char **av)

@@ -3,7 +3,6 @@ FILES = algo_bonus.c list.utils_bonus.c moves_bonus.c more_moves_bonus.c ft_spli
 OBJS=$(FILES:.c=.o)
 
 NAME =  ../checker
-CC = cc -Wall -Wextra -Werror 
 CC = cc -Wall -Wextra -Werror
 RM = rm -f
 

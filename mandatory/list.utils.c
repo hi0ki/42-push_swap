@@ -68,4 +68,5 @@ void	ft_lstfree(t_list **head)
 		free(*head);
 		*head = tmp;
 	}
+	head = NULL;
 }

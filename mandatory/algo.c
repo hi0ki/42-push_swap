@@ -104,8 +104,9 @@ int	main(int ac, char **av)
 		{
 			ft_lstadd_back(&stack_a, ft_lstnew(ft_atoi(str[j])));
 			j++;
+			free(str[i]);
 		}
-		ft_free(str, j);
+		free(str);
 		i++;
 	}
 	check_num(&stack_a);
