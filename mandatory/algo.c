@@ -91,10 +91,11 @@ int	main(int ac, char **av)
 	int		i;
 	int		j;
 	char	**str;
-	t_list	*stack_a = NULL;
+	t_list	*stack_a;
 	t_list	*stack_b;
 
 	i = 1;
+	stack_a = NULL;
 	if (ac == 1)
 		return (0);
 	while (i < ac)
