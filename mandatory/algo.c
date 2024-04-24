@@ -102,7 +102,7 @@ int	main(int ac, char **av)
 	{
 		str = ft_split(av[i], ' ');
 		j = 0;
-		while (str[j])
+		while (str[j]) 
 		{
 			ft_lstadd_back(&stack_a, ft_lstnew(ft_atoi(str[j])));
 			j++;
